@@ -1,5 +1,6 @@
 package com.offlinepay.payapp
 
+import io.flutter.embedding.android.FlutterActivity
 import android.app.role.RoleManager
 import android.content.Context
 import android.content.Intent
@@ -7,7 +8,6 @@ import android.os.Build
 import android.os.Bundle
 import android.telecom.TelecomManager
 import android.telephony.SubscriptionManager
-import io.flutter.embedding.android.FlutterActivity
 import io.flutter.embedding.engine.FlutterEngine
 import io.flutter.plugin.common.EventChannel
 import io.flutter.plugin.common.MethodChannel

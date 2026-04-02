@@ -22,6 +22,7 @@ class AppRouter {
   static const pendingRequests = '/pending-requests';
   static const transactions = '/transactions';
   static const upiPin = '/upi-pin';
+  static const appPin = '/app-pin';
 
   // ── Route generator ───────────────────────────────────────────────────────
   static Route<dynamic> generateRoute(RouteSettings settings) {
@@ -54,6 +55,9 @@ class AppRouter {
         return _slide(const TransactionsScreen());
 
       case upiPin:
+        return _slide(const UpiPinScreen());
+
+      case appPin:
         return _slide(const UpiPinScreen());
 
       default:
