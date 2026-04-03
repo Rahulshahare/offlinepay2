@@ -8,7 +8,7 @@ plugins {
 android {
     namespace = "com.offlinepay.payapp"
     compileSdk = flutter.compileSdkVersion
-    ndkVersion = flutter.ndkVersion
+    ndkVersion = "27.0.12077973"
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
@@ -42,3 +42,13 @@ android {
 flutter {
     source = "../.."
 }
+
+dependencies {
+    // Required for AppCompatActivity and UI components
+    implementation("androidx.appcompat:appcompat:1.6.1")
+    implementation("com.google.android.material:material:1.9.0")
+    
+    // Standard Kotlin library (version usually managed by the plugin)
+    implementation("org.jetbrains.kotlin:kotlin-stdlib")
+}
+

@@ -41,7 +41,22 @@ object UssdSessionManager {
 
     // ── Send reply into live USSD session ─────────────────────────────────────
     fun sendReply(text: String) {
-        activeCall?.sendUssdMessage(text)
+        // activeCall?.sendUssdMessage(text)
+        // // Reset timeout on each interaction
+        // resetTimeout()
+        val call = activeCall ?: return
+    
+        // USSD replies in an active call session are sent via DTMF tones
+        for (char in text) {
+            val dtmf = when (char) {
+                '0' -> Call.Details.CAPABILITY_MUTE // This is a placeholder logic
+                else -> char
+            }
+            // For actual USSD menu interaction in a Call session:
+            call.playDtmfTone(char)
+            call.stopDtmfTone()
+        }
+        
         // Reset timeout on each interaction
         resetTimeout()
     }
